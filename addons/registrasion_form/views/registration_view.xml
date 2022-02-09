@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <data>
+
+        <record id="registration_form_view_form" model="ir.ui.view">
+            <field name="name">registration.form.view.form</field>
+            <field name="model">registration.form</field>
+            <field name="arch" type="xml">
+                <form string="">
+                    <sheet>
+                        <div class="oe_title">
+                            <h1>
+                                <field name="name" />
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="firtsname" />
+                                <field name="lastname" />
+                            </group>
+                            <group>
+                                <field name="gender" />
+                            </group>
+                        </group>
+                        <group>
+                            <field name="address" />
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="registration_form_view_tree" model="ir.ui.view">
+            <field name="name">registration.form.view.tree</field>
+            <field name="model">registration.form</field>
+            <field name="arch" type="xml">
+                <tree string="Registration Form">
+                    <field name="name" />
+                    <field name="gender" />
+                    <field name="address" />
+                </tree>
+            </field>
+        </record>
+    
+        <record id="registration_form_action" model="ir.actions.act_window">
+            <field name="name">Registration Form</field>
+            <field name="res_model">registration.form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                  <!-- Add Text Here -->
+                  No Have Patients.
+              </p><p>
+                <!-- More details about what a user can do with this object will be OK -->
+                Create your firts Registration.
+              </p>
+            </field>
+        </record>
+    
+    </data>
+    
+    <menuitem id="registration_form_menu" name="Registration" action="registration_form_action" sequence="0"/>
+
+</odoo>
